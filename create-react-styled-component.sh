@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
- # note: the \033 represents the <Esc> character
+ # the \033 represents the <Esc> character
 RED='\033[31m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
@@ -41,19 +41,29 @@ const ${component_name}: FC<${component_name}Props> = ({ /* Props go here */ }) 
 
 export default ${component_name};" >> $component_name/$component_name.tsx
 
-# Create component test file
-touch $component_name/$component_name.test.tsx
+while [ True ]; do
+if [ "$1" = "--with-test" -o "$1" = "-t" ]; then
+    # if --with-test option has been passed
+    # Create component test file
+    touch $component_name/$component_name.test.tsx
 
-# Add test template to file
-echo "import { render } from '@testing-library/react';
-import ${component_name} from './${component_name}';
+    # Add test template to file
+    echo "import { render } from '@testing-library/react';
+    import ${component_name} from './${component_name}';
 
-describe('${component_name} component', () => {
-  it('should render without errors', () => {
-    const { getByTestId } = render(<${component_name} />);
-    expect(getByTestId('${component_name}')).toBeInTheDocument();
-  });
-});" >> $component_name/$component_name.test.tsx
+    describe('${component_name} component', () => {
+      it('should render without errors', () => {
+        const { getByTestId } = render(<${component_name} />);
+        expect(getByTestId('${component_name}')).toBeInTheDocument();
+      });
+    });" >> $component_name/$component_name.test.tsx
+
+    # the shift command causes all arguments to shift by 1, so that an argument in position 2 (if there is one) moves to position 1
+    shift 1
+else
+    break
+fi
+done
 
 # Create index file
 touch $component_name/index.ts

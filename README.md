@@ -5,3 +5,9 @@ Useful bash scripts that I use in my day-to-day work
 ```
 create-react-component --with-test # use --with-test or -t to add a test file
 ```
+
+- [generate-components](https://github.com/alexhayneshs/bash-scripts/blob/main/generate-components.sh)
+  - generates `Component.tsx`, `Component.styles.ts`, `index.ts`, and `README.md` for each component list in a text file
+```
+generate-components <path to file with component list>.txt
+```

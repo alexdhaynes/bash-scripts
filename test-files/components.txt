@@ -1,0 +1,10 @@
+Layout
+    Header  
+      MainNav
+      SubNav
+    Footer
+Game
+  GameBoard
+    GameCanvas
+      ToolPalette
+  GameLobby

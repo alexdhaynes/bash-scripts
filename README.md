@@ -1,5 +1,5 @@
 # 🐧 bash-scripts to make life easier 🐧
-Useful bash scripts that I use in my day-to-day work
+Useful bash scripts to automate the boring stuff
 
 - [create-react-styled-component](https://github.com/alexhayneshs/bash-scripts/blob/main/create-react-styled-component.sh)
 ```

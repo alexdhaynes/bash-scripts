@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#This script uses a for loop to traverse all subdirectories in the components directory. 
-# For each subdirectory, it uses the find command to get the name of the main component file (i.e. the first .tsx file it finds in the subdirectory), and then creates an index.ts file with the appropriate export statement. 
-#The > operator is used to redirect the output of the echo command into the index.ts file.
+# Look through subdirectories in the components directory. 
+# For each subdirectory, find the main component file (i.e. the first .tsx file it finds in the subdirectory)
+# then create an index.ts file with a default export of the main file
+# The > operator is used to redirect the output of the echo command into the index.ts file.
 
 # Move to the components directory
 cd components 

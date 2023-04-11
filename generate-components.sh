@@ -2,6 +2,7 @@
 
 # how to run
 # generate-components ./test-files/components.txt
+# last item in text file must be newline
 # note generate-components is an alias defined in ~/.zshrc
 
 filename=$1
